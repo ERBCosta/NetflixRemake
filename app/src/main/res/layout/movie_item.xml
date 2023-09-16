@@ -6,7 +6,7 @@
 
     <ImageView
         android:id="@+id/img_cover"
-        android:src="@drawable/movie"
+        android:src="@drawable/movie_4"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
