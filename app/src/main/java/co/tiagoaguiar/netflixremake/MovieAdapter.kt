@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import co.tiagoaguiar.netflixremake.model.Movie
-
+//aqui é a lista horizontal
 //MainAdapter é o adaptador da tela principal e filha do RecyclerViiew.Adapater
-class MainAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MainAdapter.MovieViewHolder>() {
+class MovieAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     //onCreateViewHolder - onBindViewHolder - getItemCount 3 itens obrigatórios para o RecyclerView
 
