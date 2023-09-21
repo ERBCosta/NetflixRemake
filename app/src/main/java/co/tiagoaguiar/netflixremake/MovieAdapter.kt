@@ -4,11 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import co.tiagoaguiar.netflixremake.model.Movie
 //aqui é a lista horizontal
 //MainAdapter é o adaptador da tela principal e filha do RecyclerViiew.Adapater
-class MovieAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class MovieAdapter(private val movies: List<Movie>,
+                   @LayoutRes private val layoutId: Int
+) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     //onCreateViewHolder - onBindViewHolder - getItemCount 3 itens obrigatórios para o RecyclerView
 
@@ -17,7 +20,7 @@ class MovieAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<Movie
         porém o layoutInflater é uma propriedade que só fica visível dentro da activity (appAppCompatActivity())
         então utilizamos LayoutInflater.from que vai instanciar a partir do contexto parent.context
         isso é feito quando separamos o adapter em outro arquivo */
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(layoutId, parent, false)
         return MovieViewHolder(view)
     }
 
